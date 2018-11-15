@@ -1,10 +1,8 @@
-all: driver.o parse.o
-	gcc -o driver driver.o parse.o
-driver.o: driver.c parse.h 
-	gcc -o driver.c parse.h
-parse.o: parse.c parse.h
-	gcc -o parse.c parse.h
+all: parse_arg.o
+	gcc -o driver parse_arg.o
+parse_arg.o: parse_arg.c
+	gcc -c parse_arg.c
 run:
 	./driver
 clean:
-	rm -f diver *.o *.gch *~
+	rm -f driver *.o *~ *gch
